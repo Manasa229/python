@@ -84,7 +84,7 @@ class Blackjack:
         if (len(self.current_deck)) < 0:
             raise Exception("cannot call hit on an empty hand")
 
-        self.previous_current_hand = self.current_deck[:2]
+        self.previous_current_hand = self.current_deck[:1]
         for card in self.previous_current_hand:
             self.current_deck.remove(card)
             self.current_hand.append(card)
