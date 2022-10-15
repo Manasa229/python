@@ -57,6 +57,9 @@ class Blackjack:
         score = self._get_score(self.current_hand)
         if score == -1:
             current_hand_str += "Bust!"
+            for card in self.current_hand:
+                self.discard_pile.append(card)
+                self.current_hand=[]
         else:
             current_hand_str += (str(score))
         print(current_hand_str)
