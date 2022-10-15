@@ -72,11 +72,10 @@ class Blackjack:
 
         if len(self.current_deck) < 2:
             raise Exception("Shuffle the deck")
-        self.previous_current_hand = self.current_deck[:2]
-
+        self.current_hand = self.current_deck[:2]
+        self.previous_current_hand=self.current_hand
         for card in self.previous_current_hand:
             self.current_deck.remove(card)
-            self.current_hand.append(card)
         self._print_current_hand()
 
     # Deals one more card to the current hand and prints the hand and score.
